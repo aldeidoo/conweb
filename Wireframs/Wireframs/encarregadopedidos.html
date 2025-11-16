@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pedidos - Encarregado</title>
+  <link rel="stylesheet" href="tecnico.css" />
+</head>
+<body>
+  <main>
+    <div class="fundo">
+
+    <a href="Suporte.html">
+    <img src="ajuda.svg" alt="ajuda">
+    </a>
+
+       <div class="usuario">
+          <section id="pessoa">
+              
+              <div class="foto">
+              <img src="rayan santos.jpg" alt="você">
+              </div>
+
+              <div class="infoE">
+              <p>informações</p>
+              </div>
+          </section>
+
+          <section id="controle">
+            <div class="home">
+                <a href="homeE.html">
+                    <h2>Home</h2>
+                </a>
+            </div>
+            <div class="carga">
+                <a href="encarregadopedidos.html">
+                    <h2>Pedidos</h2>
+                </a>
+            </div>
+          </section>
+      </div>
+
+        <!-- CONTEÚDO -->
+      <div class="page-wrapper">
+        <main class="conteudoE" id="conteudoE">
+          <h1>PEDIDOS</h1>
+
+          <section id="listaPedidos" class="lista-pedidos"></section>
+
+          <div class="novo-pedido">
+            <a href="encarregadonovopedido.html" class="btn-novo">Novo Pedido</a>
+          </div>
+        </main>
+      </div>
+
+      <div class="modal" id="modalExcluir" aria-hidden="true" style="display:none;">
+        <div class="modal-conteudo">
+          <h2>Deseja excluir este pedido?</h2>
+          <div class="botoes-modal">
+            <button id="cancelarExcluir" class="btn-cancelar">Cancelar</button>
+            <button id="confirmarExcluir" class="btn-confirmar">Excluir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Minha Empresa. Todos os direitos reservados.</p>
+    <p>
+        <a href="#">Início</a> 
+        <a href="#">Sobre</a> 
+        <a href="#">Contato</a>
+    </p>
+</footer>
+
+
+  <script src="encarregado.js"></script>
+  <script src="usuarioInfo.js"></script>
+
+</body>
+</html>

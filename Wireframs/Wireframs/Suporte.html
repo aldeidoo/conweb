@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Ajuda</title>
+    <link rel="stylesheet" href="Suporte.css">
+</head>
+<body>
+
+<header>
+    <h1>Ajuda e Suporte</h1>
+</header>
+
+<div class="container">
+
+    <div class="box">
+        <h2>Problema 1: O site não carrega</h2>
+        <p>Verifique sua conexão com a internet, recarregue a página e tente novamente. Caso o problema persista, tente acessar por outro navegador.</p>
+    </div>
+
+    <div class="box">
+        <h2>Problema 2: Não consigo fazer login</h2>
+        <p>Confirme se seu e-mail e senha estão corretos. Limpe o cache do navegador e tente novamente.</p>
+    </div>
+
+    <div class="box">
+        <h2>Problema 3: Página travando</h2>
+        <p>Feche outras abas pesadas do navegador. Reinicie o navegador e tente acessar novamente.</p>
+    </div>
+
+    <div class="box">
+        <h2>Enviar mensagem ao RH</h2>
+        <p>Se as explicações acima não ajudaram, envie uma mensagem abaixo:</p>
+        <textarea id="mensagem" placeholder="Escreva sua mensagem..."></textarea>
+        <button onclick="enviarMensagem()">Enviar</button>
+        <div id="msg-enviada">Mensagem enviada com sucesso!</div>
+    </div>
+
+</div>
+
+<script>
+    function enviarMensagem() {
+        document.getElementById('msg-enviada').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

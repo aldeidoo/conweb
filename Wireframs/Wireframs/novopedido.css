@@ -1,0 +1,491 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url(fundo-legal.jpg);
+}
+
+/* BOTAO MENU */
+#toggle-menu {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 1300;
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#toggle-menu:hover {
+  background: #555;
+}
+
+/* MENU LATERAL */
+.menu-lateral {
+  position: fixed;
+  left: -420px;
+  top: 0;
+  width: 400px;
+  height: 100vh;
+  background: #d3d3d3;
+  border-right: 2px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  transition: left .28s ease;
+  z-index: 1200;
+}
+
+.menu-lateral.ativo {
+  left: 0;
+}
+
+/* ajuda / perfil */
+.ajuda img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 18px;
+}
+
+.perfil {
+  width: 90%;
+  border-bottom: 2px solid #000;
+  text-align: center;
+  padding: 14px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.foto-encarregado {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #000;
+  margin: 8px auto;
+}
+
+.foto-encarregado img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info-encarregado {
+  background: #fff;
+  border: 2px solid #000;
+  padding: 8px;
+  width: 80%;
+  margin-top: 8px;
+  margin-bottom: 6px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu {
+  width: 100%;
+  margin-top: 12px;
+  border-top: 2px solid #000;
+}
+
+.btn-menu {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 24px 0;
+  border-bottom: 2px solid #000;
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.btn-menu:hover,
+.btn-menu.ativo {
+  background: #a9a9a9;
+}
+
+/* PAGE WRAPPER */
+.page-wrapper {
+  margin-left: 0;
+  transition: margin-left .28s ease;
+  flex: 1;
+}
+
+.menu-lateral.ativo ~ .page-wrapper {
+  margin-left: 420px;
+}
+
+/* CONTEÚDO */
+.conteudo {
+  background: #bfbfbf;
+  border: 4px solid #000;
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 22px;
+}
+
+.conteudo h1 {
+  background: #fff;
+  border-bottom: 4px solid #000;
+  padding: 16px;
+  text-align: center;
+}
+
+/* FORMULÁRIO */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #fff;
+  border: 2px solid #000;
+  padding: 18px;
+  border-radius: 6px;
+  max-width: 520px;
+  margin: 24px auto;
+}
+
+.formulario label {
+  font-weight: 700;
+}
+
+.formulario input {
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  background: #fff;
+  outline: none;
+}
+
+.formulario input:focus {
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.06);
+}
+
+/* MOTIVO DO PEDIDO */
+.formulario textarea {
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  background: #fff;
+  outline: none;
+  resize: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.formulario textarea:focus {
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.06);
+}
+
+/* SELECT STATUS */
+.formulario select {
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+}
+
+.formulario select:focus {
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.06);
+}
+
+/* BOTÕES FORM */
+.botoes-form {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-novo {
+  background: #4caf50;
+  color: #fff;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.btn-cancelar {
+  background: #777;
+  color: #fff;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 20px;
+}
+
+/* LISTA DE PEDIDOS */
+.lista-pedidos {
+  max-width: 920px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 120px;
+}
+
+/* CORES DOS PEDIDOS POR STATUS */
+.pedido.novo {
+  border-color: #24b600;
+}
+
+.pedido.andamento {
+  border-color: #d1b000;
+}
+
+.pedido.encerrado {
+  border-color: #d00000;
+}
+
+/* CARD DO PEDIDO */
+.pedido {
+  background: #fff;
+  border: 3px solid #000;
+  padding: 16px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.pedido:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.22);
+}
+
+/* TÍTULO DO CARD */
+.pedido-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* TEXTO */
+.pedido p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.pedido p strong {
+  font-size: 15px;
+  color: #222;
+}
+
+/* DETALHES */
+.pedido-detalhes p {
+  margin: 4px 0;
+}
+
+/* STATUS BADGE */
+.status-badge {
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.status-novo {
+  background: #24b600;
+  border: 2px solid #0f5c00;
+}
+
+.status-andamento {
+  background: #d1b000;
+  border: 2px solid #8a7400;
+}
+
+.status-encerrado {
+  background: #d00000;
+  border: 2px solid #700000;
+}
+
+/* BOTÕES */
+.acoes-pedido {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-editar {
+  background: #3652f4;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-excluir {
+  background: #d32f2f;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* MENSAGEM VAZIA */
+.vazio-central {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  font-weight: 700;
+  color: #333;
+  border: 2px dashed #ccc;
+  background: #fafafa;
+  margin: 10px;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-conteudo {
+  background: #fff;
+  border: 4px solid #000;
+  padding: 26px 28px;
+  border-radius: 8px;
+  text-align: center;
+  transform: scale(.7);
+  animation: popup .22s cubic-bezier(.2, .9, .3, 1) forwards;
+}
+
+@keyframes popup {
+  from {
+    transform: scale(.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.botoes-modal {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-top: 18px;
+}
+
+.btn-confirmar,
+.btn-cancelar {
+  padding: 10px 14px;
+  border: 2px solid #000;
+  background: #bfbfbf;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 6px;
+}
+
+.btn-confirmar {
+  background: #4caf50;
+  color: #fff;
+  border-color: #2e7d32;
+}
+
+.btn-cancelar {
+  background: #777;
+  color: #fff;
+  border-color: #444;
+}
+
+/* POPUP */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #222;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 8px;
+  z-index: 2100;
+}
+
+.popup.ativo {
+  display: block;
+}
+
+/* ROLAGEM */
+.lista-pedidos {
+  max-height: 65vh;
+  overflow-y: auto;
+  padding-right: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f0f0f0;
+}
+
+.lista-pedidos::-webkit-scrollbar {
+  width: 8px;
+}
+
+.lista-pedidos::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+.lista-pedidos::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.lista-pedidos::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 12px;
+  background: #222;
+  color: #ddd;
+  border-top: 3px solid #000;
+  margin-top: auto;
+}
+
+footer a {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

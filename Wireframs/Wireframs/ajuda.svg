@@ -1,0 +1,4 @@
+<svg width="50" height="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <circle cx="50" cy="50" r="45" stroke="black" stroke-width="5" fill="transparent" />
+  <text x="50" y="65" text-anchor="middle" font-size="60" font-family="Arial" fill="black" font-weight="bold">?</text>
+</svg>
